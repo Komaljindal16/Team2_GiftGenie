@@ -1,3 +1,5 @@
 <resources>
-    <string name="GiftGenie">Team 2</string>
+    <string name="GiftGenie">Gift Genie</string>
+    <string name="default_web_client_id">116030471542-u5rt4qbecmiia6294bvt0c3hadsne3ol.apps.googleusercontent.com</string>
+
 </resources>
