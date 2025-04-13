@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "116030471542",
+    "project_id": "geniegiftfb",
+    "storage_bucket": "geniegiftfb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116030471542:android:91e7d1caae41a4692c8e57",
+        "android_client_info": {
+          "package_name": "com.app.geniegiftapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116030471542-5mf4elerkn3vuce93iohlv784iggsnhn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.geniegiftapp",
+            "certificate_hash": "24252f30fa565fe3288116e6f015ca50749111c7"
+          }
+        },
+        {
+          "client_id": "116030471542-u5rt4qbecmiia6294bvt0c3hadsne3ol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7VPXrHHklu_1e_Irclt8REU1_agiGpsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116030471542-u5rt4qbecmiia6294bvt0c3hadsne3ol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
