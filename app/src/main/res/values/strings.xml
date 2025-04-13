@@ -1,11 +1,10 @@
 <resources>
     <string name="GiftGenie">Gift Genie</string>
     <string name="default_web_client_id">116030471542-u5rt4qbecmiia6294bvt0c3hadsne3ol.apps.googleusercontent.com</string>
-
-        <string name="app_name">Gift Genie</string>
-        <string name="welcome_text">Gift Genie</string>
-        <string name="tagline_text">Craft Moments That Matter</string>
-        <string name="continue_button">Start Shopping</string>
+    <string name="app_name">Gift Genie</string>
+    <string name="welcome_text">Gift Genie</string>
+    <string name="tagline_text">Craft Moments That Matter</string>
+    <string name="continue_button">Start Shopping</string>
     <string name="search_hint">Search Gifts</string>
     <string name="welcome_message">Discover Perfect Gifts</string>
     <string name="featured_gift_title">Special Gift Box</string>
@@ -37,9 +36,9 @@
         <string name="phone_hint">Phone Number</string>
         <string name="sign_up_button">Sign Up</string>
         <string name="sign_up_button_description">Create a new account</string>
-        <string name="sign_in_prompt">Already have an account?</string>
-        <string name="sign_in_link">Sign In</string>
-        <string name="sign_in_link_description">Navigate to sign in</string>
+    <string name="sign_in_prompt">Already have an account?</string>
+    <string name="sign_in_link">Sign In</string>
+    <string name="sign_in_link_description">Navigate to sign in</string>
     <string name="profile_screen_description">Profile screen</string>
     <string name="profile_title">My Profile</string>
     <string name="name_label">Name</string>
@@ -59,5 +58,20 @@
     <string name="placeholder_username">Username</string>
     <string name="placeholder_phone">Phone Number</string>
     <string name="placeholder_address">Shipping address</string>
-
+    <string name="checkout_screen_description">Checkout screen</string>
+    <string name="checkout_title">Checkout</string>
+    <string name="subtotal_label">Subtotal</string>
+    <string name="subtotal_description">Order subtotal</string>
+    <string name="tax_label">Tax</string>
+    <string name="tax_description">Tax amount</string>
+    <string name="other_charges_label">Other Charges</string>
+    <string name="other_charges_description">Additional fees</string>
+    <string name="total_label">Total</string>
+    <string name="total_description">Total amount to pay</string>
+    <string name="shipping_title">Shipping Details</string>
+    <string name="payment_title">Payment Method</string>
+    <string name="payment_method_description">Select payment method</string>
+    <string name="confirm_payment_button">Confirm Payment</string>
+    <string name="confirm_payment_button_description">Confirm and process payment</string>
+    <string name="back_to_home_description">Navigate back to home</string>
 </resources>
