@@ -16,8 +16,7 @@
         android:textStyle="bold"
         android:textColor="#D81B60"
         android:paddingBottom="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/underline_border" />
+        android:layout_marginBottom="8dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

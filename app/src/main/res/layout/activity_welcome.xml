@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
-    <!-- Gift Image -->
     <ImageView
         android:id="@+id/gift_image"
         android:layout_width="0dp"
@@ -27,7 +26,7 @@
         android:layout_marginEnd="48dp"
         android:animation="@anim/gentle_float" />
 
-    <!-- Welcome Text -->
+
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
@@ -44,7 +43,7 @@
         android:layout_marginTop="28dp"
         android:animation="@anim/fade_in" />
 
-    <!-- Tagline -->
+   
     <TextView
         android:id="@+id/tagline_text"
         android:layout_width="0dp"
@@ -69,7 +68,7 @@
         android:layout_marginTop="12dp"
         android:animation="@anim/fade_in_delayed" />
 
-    <!-- Continue Button -->
+  
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"
         android:layout_width="0dp"
@@ -92,7 +91,7 @@
         android:layout_marginEnd="24dp"
         android:animation="@anim/slide_up_subtle" />
 
-    <!-- Sparkle 1 -->
+   
     <ImageView
         android:id="@+id/sparkle1"
         android:layout_width="20dp"
@@ -107,7 +106,6 @@
         android:layout_marginTop="72dp"
         android:animation="@anim/subtle_twinkle" />
 
-    <!-- Sparkle 2 -->
     <ImageView
         android:id="@+id/sparkle2"
         android:layout_width="20dp"
@@ -122,7 +120,7 @@
         android:layout_marginTop="88dp"
         android:animation="@anim/subtle_twinkle_delayed" />
 
-    <!-- Sparkle 3 -->
+  
     <ImageView
         android:id="@+id/sparkle3"
         android:layout_width="20dp"

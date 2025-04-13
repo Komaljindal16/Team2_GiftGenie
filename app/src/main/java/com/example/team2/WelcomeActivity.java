@@ -19,7 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
             finish();
         });
 
-        // Animate sparkles
+       
         animateSparkle(findViewById(R.id.sparkle1), 0, 2000);
         animateSparkle(findViewById(R.id.sparkle2), 500, 2500);
         animateSparkle(findViewById(R.id.sparkle3), 1000, 3000);
