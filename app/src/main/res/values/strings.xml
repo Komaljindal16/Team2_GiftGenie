@@ -40,5 +40,24 @@
         <string name="sign_in_prompt">Already have an account?</string>
         <string name="sign_in_link">Sign In</string>
         <string name="sign_in_link_description">Navigate to sign in</string>
+    <string name="profile_screen_description">Profile screen</string>
+    <string name="profile_title">My Profile</string>
+    <string name="name_label">Name</string>
+    <string name="name_description">User’s full name</string>
+    <string name="username_label">Username</string>
+    <string name="username_description">User’s username</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="phone_description">User’s phone number</string>
+    <string name="change_password_title">Change Password</string>
+    <string name="change_password_button">Change Password</string>
+    <string name="change_password_button_description">Change your password</string>
+    <string name="shipping_address_title">Shipping Address</string>
+    <string name="address_description">User’s shipping address</string>
+    <string name="edit_profile_link">Edit Profile</string>
+    <string name="edit_profile_link_description">Edit profile details</string>
+    <string name="placeholder_name">Name</string>
+    <string name="placeholder_username">Username</string>
+    <string name="placeholder_phone">Phone Number</string>
+    <string name="placeholder_address">Shipping address</string>
 
 </resources>
