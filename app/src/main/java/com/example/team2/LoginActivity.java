@@ -20,18 +20,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
 
-        // Initialize views
+     
         usernameInput = findViewById(R.id.username_input);
         passwordInput = findViewById(R.id.password_input);
         signInButton = findViewById(R.id.sign_in_button);
         signUpLink = findViewById(R.id.sign_up_link);
         forgetPasswordLink = findViewById(R.id.forget_password);
 
-        // Initialize helpers
+    
         dbHelper = new DatabaseHelper(this);
         sessionManager = new SessionManager(this);
 
-        // Set listeners
         signInButton.setOnClickListener(v -> login());
         signUpLink.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
