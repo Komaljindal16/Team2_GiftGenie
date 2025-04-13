@@ -108,37 +108,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Gift Categories Title -->
-        <TextView
-            android:id="@+id/categories_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/categories_title"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/dark_burnt_sienna"
-            app:layout_constraintTop_toBottomOf="@id/featured_gift_card"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:animation="@anim/fade_in" />
 
-        <!-- Categories RecyclerView -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/categories_recycler"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/categories_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:overScrollMode="never"
-            android:animation="@anim/slide_up_subtle"
-            android:contentDescription="@string/categories_recycler_description" />
 
         <!-- Popular Gifts Title -->
         <TextView
@@ -149,7 +119,7 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/dark_burnt_sienna"
-            app:layout_constraintTop_toBottomOf="@id/categories_recycler"
+            app:layout_constraintTop_toBottomOf="@id/featured_gift_card"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="24dp"
             android:layout_marginStart="16dp"
