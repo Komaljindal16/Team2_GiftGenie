@@ -14,36 +14,20 @@ import java.util.List;
 public class HomeFragment extends Fragment implements GiftData.OnGiftsLoadedListener {
     private static final String TAG = "HomeFragment";
     private RecyclerView recyclerView;
-    private RecyclerView categoriesRecycler;
     private GiftAdapter adapter;
-    private CategoryAdapter categoryAdapter;
     private List<Gift> allGifts = new ArrayList<>();
-    private List<Category> categories = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapter = new GiftAdapter(allGifts, false);
         recyclerView.setAdapter(adapter);
 
-        categoriesRecycler = view.findViewById(R.id.categories_recycler);
-        categoriesRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        populateCategories();
-        categoryAdapter = new CategoryAdapter(categories);
-        categoriesRecycler.setAdapter(categoryAdapter);
-        Log.d(TAG, "Categories RecyclerView set up with " + categories.size() + " categories");
-
         GiftData.getInstance().setOnGiftsLoadedListener(this);
         return view;
-    }
-
-    private void populateCategories() {
-        categories.add(new Category("Birthdays", R.color.rose_quartz));
-        categories.add(new Category("Anniversaries", R.color.soft_cherry));
-        categories.add(new Category("Holidays", R.color.crimson_glow));
     }
 
     @Override
@@ -70,7 +54,6 @@ public class HomeFragment extends Fragment implements GiftData.OnGiftsLoadedList
                 filteredGifts.add(gift);
             }
         }
-        Log.d(TAG, "Filtered gifts count: " + filteredGifts.size());
         adapter = new GiftAdapter(filteredGifts, false);
         recyclerView.setAdapter(adapter);
     }

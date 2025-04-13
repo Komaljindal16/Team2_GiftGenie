@@ -1,5 +1,4 @@
 package com.example.team2;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;

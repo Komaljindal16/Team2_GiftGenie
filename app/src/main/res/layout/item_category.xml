@@ -22,5 +22,6 @@
         android:contentDescription="@string/category_item_description"
         android:minWidth="80dp"
         android:gravity="center"
-        android:animation="@anim/fade_in" />
+        android:animation="@anim/fade_in"
+        android:background="@null" />
 </androidx.cardview.widget.CardView>

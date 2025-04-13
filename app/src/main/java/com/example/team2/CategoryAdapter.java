@@ -11,9 +11,15 @@ import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Category> categories;
+    private OnCategoryClickListener listener;
 
-    public CategoryAdapter(List<Category> categories) {
+    public interface OnCategoryClickListener {
+        void onCategoryClick(String category);
+    }
+
+    public CategoryAdapter(List<Category> categories, OnCategoryClickListener listener) {
         this.categories = categories;
+        this.listener = listener;
     }
 
     @NonNull
@@ -30,6 +36,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.categoryName.setText(category.getName());
         holder.categoryName.setBackgroundColor(
                 ContextCompat.getColor(holder.itemView.getContext(), category.getColorResId()));
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onCategoryClick(category.getName());
+            }
+        });
     }
 
     @Override
