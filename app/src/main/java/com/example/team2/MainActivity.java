@@ -1,9 +1,12 @@
 package com.example.team2;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -36,10 +39,14 @@ public class MainActivity extends AppCompatActivity {
         ImageView appLogo = findViewById(R.id.app_logo);
         ImageView loginIcon = findViewById(R.id.login_icon);
 
+        // Clear focus and hide keyboard when clicking outside search bar
+        findViewById(R.id.fragment_container).setOnClickListener(v -> clearSearchBarFocus());
+
         // App Logo click -> Navigate to HomeFragment
         if (appLogo != null) {
             appLogo.setOnClickListener(v -> {
                 Log.d(TAG, "App logo clicked");
+                clearSearchBarFocus();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new HomeFragment())
                         .commit();
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (loginIcon != null) {
             loginIcon.setOnClickListener(v -> {
                 Log.d(TAG, "Login icon clicked");
+                clearSearchBarFocus();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new ProfileFragment())
                         .commit();
@@ -80,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void afterTextChanged(Editable s) {}
             });
+
+            // Optional: Ensure clear button works (redundant if endIconMode works)
+            searchBarLayout.setEndIconOnClickListener(v -> {
+                searchBar.setText("");
+                Log.d(TAG, "Clear button clicked");
+            });
         } else {
             Log.e(TAG, "Search bar TextInputEditText not found");
         }
@@ -100,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
+                clearSearchBarFocus();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, selectedFragment)
                         .commit();
@@ -119,5 +134,14 @@ public class MainActivity extends AppCompatActivity {
         int cartSize = GiftData.getInstance().getCart().size();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setNumber(cartSize);
+    }
+
+    private void clearSearchBarFocus() {
+        if (searchBar != null && searchBar.hasFocus()) {
+            searchBar.clearFocus();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(searchBar.getWindowToken(), 0);
+            Log.d(TAG, "Search bar focus cleared");
+        }
     }
 }
