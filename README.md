@@ -16,3 +16,12 @@ public void updateCartBadge() {
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setNumber(cartSize);
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(cartSize > 0);
     }
+
+#Calculate Total
+    private double calculateTotal(List<Gift> cartItems) {
+        double total = 0;
+        for (Gift gift : cartItems) {
+            total += gift.getPrice() * gift.getQuantity();
+        }
+        return total;
+    }
