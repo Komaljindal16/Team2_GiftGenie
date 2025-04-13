@@ -25,7 +25,6 @@ public class GiftData {
         Call<List<FakeStoreProduct>> getProducts();
     }
 
-    // Data class for Fake Store API response
     public static class FakeStoreProduct {
         private String title;
         private double price;
