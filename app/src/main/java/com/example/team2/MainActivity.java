@@ -20,19 +20,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set up Toolbar
+       
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-        // Initialize views
         ImageView appLogo = findViewById(R.id.app_logo);
         searchBar = findViewById(R.id.search_bar);
         ImageView loginIcon = findViewById(R.id.login_icon);
 
-        // App Logo click -> Navigate to HomeFragment
+        
         appLogo.setOnClickListener(v -> {
             Log.d(TAG, "App logo clicked");
             getSupportFragmentManager().beginTransaction()
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         });
 
-        // Search Bar listener
+    
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -67,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        // Set up Bottom Navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
@@ -90,14 +88,13 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        // Load HomeFragment by default
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
         }
 
-        // Set context and update badge
+        
         GiftData.getInstance().setContext(this);
         updateCartBadge();
     }
