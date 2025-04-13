@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/gradient_background">
 
+    <!-- Gift Image -->
     <ImageView
         android:id="@+id/gift_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/genie_gift"
-
+        android:src="@drawable/welcome_pic"
         android:contentDescription="Gift Icon"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
@@ -21,65 +21,120 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/welcome_text"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.95"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp" />
+        app:layout_constraintHeight_percent="0.35"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:animation="@anim/gentle_float" />
 
+    <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to GenieGift"
-        android:textSize="24sp"
+        android:text="@string/welcome_text"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
         android:textColor="@color/primary_red"
-        app:layout_constraintBottom_toTopOf="@id/continue_button"
+        android:background="@null"
+        app:layout_constraintTop_toBottomOf="@id/gift_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="28dp"
+        android:animation="@anim/fade_in" />
 
-    <Button
-        android:id="@+id/continue_button"
+    <!-- Tagline -->
+    <TextView
+        android:id="@+id/tagline_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Continue"
+        android:text="@string/tagline_text"
+        android:textSize="20sp"
+        android:textColor="@color/secondary_red"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:background="@null"
+        android:alpha="0.9"
+        android:shadowColor="@color/primary_red"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/welcome_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginTop="12dp"
+        android:animation="@anim/fade_in_delayed" />
+
+    <!-- Continue Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/continue_button"
         android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/wine_red"
+        android:elevation="3dp"
+        app:cornerRadius="10dp"
+        app:rippleColor="@color/secondary_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.6"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintWidth_percent="0.75"
+        android:layout_marginBottom="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:animation="@anim/slide_up_subtle" />
 
+    <!-- Sparkle 1 -->
     <ImageView
         android:id="@+id/sparkle1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/ic_sparkle"
-        android:contentDescription="Sparkle"
-        android:visibility="invisible"
+        android:contentDescription="Decorative Sparkle"
+        android:background="@null"
+        android:alpha="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/gift_image"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="72dp"
+        android:animation="@anim/subtle_twinkle" />
 
+    <!-- Sparkle 2 -->
     <ImageView
         android:id="@+id/sparkle2"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/ic_sparkle"
-        android:contentDescription="Sparkle"
-        android:visibility="invisible"
+        android:contentDescription="Decorative Sparkle"
+        android:background="@null"
+        android:alpha="0.5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/gift_image"
+        android:layout_marginEnd="56dp"
+        android:layout_marginTop="88dp"
+        android:animation="@anim/subtle_twinkle_delayed" />
 
+    <!-- Sparkle 3 -->
     <ImageView
         android:id="@+id/sparkle3"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="204dp"
+        android:alpha="0.5"
+        android:animation="@anim/subtle_twinkle_delayed"
+        android:background="@null"
+        android:contentDescription="Decorative Sparkle"
         android:src="@drawable/ic_sparkle"
-        android:contentDescription="Sparkle"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/gift_image" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
