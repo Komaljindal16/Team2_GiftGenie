@@ -54,10 +54,10 @@
     <string name="address_description">User’s shipping address</string>
     <string name="edit_profile_link">Edit Profile</string>
     <string name="edit_profile_link_description">Edit profile details</string>
-    <string name="placeholder_name">Name</string>
-    <string name="placeholder_username">Username</string>
-    <string name="placeholder_phone">Phone Number</string>
-    <string name="placeholder_address">Shipping address</string>
+    <string name="placeholder_name">Komal Jindal</string>
+    <string name="placeholder_username">komaljindal16</string>
+    <string name="placeholder_phone">1234567890</string>
+    <string name="placeholder_address">78 Rosebank Drive, M1B 4S3 Toronto, ON</string>
     <string name="checkout_screen_description">Checkout screen</string>
     <string name="checkout_title">Checkout</string>
     <string name="subtotal_label">Subtotal</string>
