@@ -96,11 +96,20 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
         }
+
+        // Set context and update badge
+        GiftData.getInstance().setContext(this);
+        updateCartBadge();
     }
 
     public void updateCartBadge() {
-        int cartSize = GiftData.getInstance().getCart().size();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        int cartSize = 0;
+        for (Gift gift : GiftData.getInstance().getCart()) {
+            cartSize += gift.getQuantity();
+        }
+        Log.d(TAG, "Updating badge with cart quantity: " + cartSize);
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setNumber(cartSize);
+        bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(cartSize > 0);
     }
 }
