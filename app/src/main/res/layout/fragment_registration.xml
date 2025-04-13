@@ -14,7 +14,7 @@
         android:background="@null"
         android:padding="16dp">
 
-        <!-- Logo -->
+       
         <ImageView
             android:id="@+id/register_logo"
             android:layout_width="100dp"
@@ -27,7 +27,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="32dp" />
 
-        <!-- Title -->
         <TextView
             android:id="@+id/register_title"
             android:layout_width="wrap_content"
@@ -43,7 +42,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
 
-        <!-- Name -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name_input_layout"
             android:layout_width="0dp"
@@ -70,7 +68,7 @@
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Email -->
+   
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_input_layout"
             android:layout_width="0dp"
@@ -97,7 +95,7 @@
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Username -->
+\
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_input_layout"
             android:layout_width="0dp"
@@ -124,7 +122,7 @@
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Password -->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_input_layout"
             android:layout_width="0dp"
@@ -152,7 +150,7 @@
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Phone Number -->
+     
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone_input_layout"
             android:layout_width="0dp"
@@ -179,7 +177,6 @@
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Sign Up Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_button"
             android:layout_width="0dp"
@@ -199,7 +196,6 @@
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/sign_up_button_description" />
 
-        <!-- Sign In Prompt -->
         <TextView
             android:id="@+id/sign_in_prompt"
             android:layout_width="wrap_content"
@@ -213,7 +209,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp" />
 
-        <!-- Sign In Link -->
+
         <TextView
             android:id="@+id/sign_in_link"
             android:layout_width="wrap_content"
