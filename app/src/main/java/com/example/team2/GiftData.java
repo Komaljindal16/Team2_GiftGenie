@@ -1,10 +1,9 @@
 package com.example.team2;
 
+import android.content.Context;
 import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,6 +17,7 @@ public class GiftData {
     private List<Gift> gifts = new ArrayList<>();
     private List<Gift> cart = new ArrayList<>();
     private OnGiftsLoadedListener listener;
+    private Context context;
 
     // Retrofit interface for Fake Store API
     public interface FakeStoreApi {
@@ -37,7 +37,7 @@ public class GiftData {
     }
 
     private GiftData() {
-        fetchGifts();
+        // Initialize without fetching to avoid immediate API call
     }
 
     public static GiftData getInstance() {
@@ -47,11 +47,20 @@ public class GiftData {
         return instance;
     }
 
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
     public void setOnGiftsLoadedListener(OnGiftsLoadedListener listener) {
         this.listener = listener;
         if (!gifts.isEmpty() && listener != null) {
             listener.onGiftsLoaded();
         }
+    }
+
+    public void loadGifts() {
+        Log.d(TAG, "loadGifts called");
+        fetchGifts();
     }
 
     private void fetchGifts() {
@@ -76,7 +85,7 @@ public class GiftData {
                         double price = product.getPrice();
                         String imageUrl = product.getImage();
                         Log.d(TAG, "Gift added - Name: " + name + ", URL: " + imageUrl + ", Price: " + price);
-                        gifts.add(new Gift(name, price, imageUrl));
+                        gifts.add(new Gift(name, price, imageUrl, 0)); // Added quantity=0
                     }
                     Log.d(TAG, "Gifts loaded: " + gifts.size());
                     if (listener != null) {
@@ -100,22 +109,61 @@ public class GiftData {
         });
     }
 
-    public List<Gift> getGifts() { return gifts; }
-    public List<Gift> getCart() { return cart; }
+    public List<Gift> getGifts() {
+        return new ArrayList<>(gifts);
+    }
+
+    public List<Gift> getCart() {
+        return new ArrayList<>(cart);
+    }
 
     public void addToCart(Gift gift) {
-        for (Gift cartGift : cart) {
-            if (cartGift.getName().equals(gift.getName())) {
-                cartGift.setQuantity(cartGift.getQuantity() + 1);
-                return;
+        Log.d(TAG, "Adding to cart: " + gift.getName());
+        Gift cartGift = null;
+        for (Gift g : cart) {
+            if (g.getName().equals(gift.getName())) {
+                cartGift = g;
+                break;
             }
         }
-        gift.setQuantity(1);
-        cart.add(gift);
+        if (cartGift != null) {
+            cartGift.setQuantity(cartGift.getQuantity() + 1);
+            Log.d(TAG, "Incremented quantity for " + cartGift.getName() + ": " + cartGift.getQuantity());
+        } else {
+            Gift newGift = new Gift(gift.getName(), gift.getPrice(), gift.getImageUrl(), 1);
+            cart.add(newGift);
+            Log.d(TAG, "Added new gift to cart: " + newGift.getName());
+        }
+        updateCartBadge();
     }
 
     public void removeFromCart(Gift gift) {
-        cart.remove(gift);
+        Log.d(TAG, "Removing from cart: " + gift.getName());
+        Gift cartGift = null;
+        for (Gift g : cart) {
+            if (g.getName().equals(gift.getName())) {
+                cartGift = g;
+                break;
+            }
+        }
+        if (cartGift != null) {
+            cartGift.setQuantity(cartGift.getQuantity() - 1);
+            Log.d(TAG, "Decremented quantity for " + cartGift.getName() + ": " + cartGift.getQuantity());
+            if (cartGift.getQuantity() <= 0) {
+                cart.remove(cartGift);
+                Log.d(TAG, "Removed gift from cart: " + cartGift.getName());
+            }
+        }
+        updateCartBadge();
+    }
+
+    private void updateCartBadge() {
+        Log.d(TAG, "Updating cart badge");
+        if (context instanceof MainActivity) {
+            ((MainActivity) context).updateCartBadge();
+        } else {
+            Log.e(TAG, "Context is not MainActivity: " + (context != null ? context.getClass().getSimpleName() : "null"));
+        }
     }
 
     public interface OnGiftsLoadedListener {

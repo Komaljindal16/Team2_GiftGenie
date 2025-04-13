@@ -5,56 +5,70 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements GiftData.OnGiftsLoadedListener {
+public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private RecyclerView recyclerView;
+    private TextView noResultsText;
     private GiftAdapter adapter;
-    private List<Gift> allGifts = new ArrayList<>();
+    private List<Gift> giftList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d(TAG, "Creating HomeFragment view");
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         recyclerView = view.findViewById(R.id.recycler_view);
+        noResultsText = view.findViewById(R.id.no_results_text);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new GiftAdapter(allGifts, false);
+        giftList = new ArrayList<>();
+        adapter = new GiftAdapter(giftList, false, true); // isCartMode=false, isHomeMode=true
         recyclerView.setAdapter(adapter);
 
-        GiftData.getInstance().setOnGiftsLoadedListener(this);
+        GiftData.getInstance().setOnGiftsLoadedListener(new GiftData.OnGiftsLoadedListener() {
+            @Override
+            public void onGiftsLoaded() {
+                Log.d(TAG, "Gifts loaded: " + GiftData.getInstance().getGifts().size());
+                giftList.clear();
+                giftList.addAll(GiftData.getInstance().getGifts());
+                adapter.notifyDataSetChanged();
+                updateNoResultsVisibility();
+            }
+
+            @Override
+            public void onError(String message) {
+                Log.e(TAG, "Error loading gifts: " + message);
+            }
+        });
+
+        GiftData.getInstance().loadGifts();
         return view;
-    }
-
-    @Override
-    public void onGiftsLoaded() {
-        Log.d(TAG, "Gifts loaded in HomeFragment");
-        allGifts.clear();
-        allGifts.addAll(GiftData.getInstance().getGifts());
-        adapter.notifyDataSetChanged();
-        if (getActivity() instanceof MainActivity) {
-            ((MainActivity) getActivity()).updateCartBadge();
-        }
-    }
-
-    @Override
-    public void onError(String message) {
-        Log.e(TAG, "Error loading gifts: " + message);
     }
 
     public void filterGifts(String query) {
         Log.d(TAG, "Filtering gifts with query: " + query);
-        List<Gift> filteredGifts = new ArrayList<>();
-        for (Gift gift : allGifts) {
-            if (gift.getName().toLowerCase().contains(query.toLowerCase())) {
-                filteredGifts.add(gift);
+        List<Gift> filteredList = new ArrayList<>();
+        query = query.trim().toLowerCase();
+        for (Gift gift : GiftData.getInstance().getGifts()) {
+            if (gift.getName().toLowerCase().contains(query)) {
+                filteredList.add(gift);
             }
         }
-        adapter = new GiftAdapter(filteredGifts, false);
-        recyclerView.setAdapter(adapter);
+        giftList.clear();
+        giftList.addAll(filteredList);
+        adapter.notifyDataSetChanged();
+        updateNoResultsVisibility();
+    }
+
+    private void updateNoResultsVisibility() {
+        noResultsText.setVisibility(giftList.isEmpty() ? View.VISIBLE : View.GONE);
+        recyclerView.setVisibility(giftList.isEmpty() ? View.GONE : View.VISIBLE);
     }
 }

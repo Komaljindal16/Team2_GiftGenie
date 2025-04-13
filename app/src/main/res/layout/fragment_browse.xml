@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/browse_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    android:contentDescription="List of gifts on browse screen" />
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/browse_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browse Gifts"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#D81B60"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/underline_border" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/browse_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="List of gifts in browse screen" />
+
+        <TextView
+            android:id="@+id/no_results_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="No results found"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

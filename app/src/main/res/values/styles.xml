@@ -1,8 +1,0 @@
-<resources>
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/gradient_background</item>
-        <item name="colorPrimary">@color/crimson_glow</item>
-        <item name="colorPrimaryVariant">@color/dark_wine_red</item>
-        <item name="colorOnPrimary">@color/white</item>
-    </style>
-</resources>
