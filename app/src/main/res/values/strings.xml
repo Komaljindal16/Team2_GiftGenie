@@ -18,7 +18,27 @@
     <string name="categories_recycler_description">Gift Categories</string>
     <string name="popular_gifts_recycler_description">Popular Gifts</string>
     <string name="app_logo_description">Search Gifts\n</string>
-    <string name="login_icon_description">Login or profile, navigate to profile</string>
+        <string name="gift_image_description">Gift image</string>
+        <string name="login_screen_description">Login screen</string>
+        <string name="login_title">Sign In</string>
+        <string name="username_hint">Username</string>
+        <string name="password_hint">Password</string>
+        <string name="forget_password">Forgot Password?</string>
+        <string name="forget_password_description">Reset your password</string>
+        <string name="sign_in_button">Sign In</string>
+        <string name="sign_in_button_description">Sign in to your account</string>
+        <string name="sign_up_prompt">Don’t have an account?</string>
+        <string name="sign_up_link">Sign Up</string>
+        <string name="sign_up_link_description">Navigate to sign up</string>
+        <string name="registration_screen_description">Registration screen</string>
+        <string name="register_title">Create Account</string>
+        <string name="name_hint">Full Name</string>
+        <string name="email_hint">Gmail Address</string>
+        <string name="phone_hint">Phone Number</string>
+        <string name="sign_up_button">Sign Up</string>
+        <string name="sign_up_button_description">Create a new account</string>
+        <string name="sign_in_prompt">Already have an account?</string>
+        <string name="sign_in_link">Sign In</string>
+        <string name="sign_in_link_description">Navigate to sign in</string>
 
-    <string name="category_item_description">Category item</string>
 </resources>
