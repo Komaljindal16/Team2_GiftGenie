@@ -6,5 +6,19 @@
         <string name="welcome_text">Gift Genie</string>
         <string name="tagline_text">Craft Moments That Matter</string>
         <string name="continue_button">Start Shopping</string>
+    <string name="search_hint">Search Gifts</string>
+    <string name="welcome_message">Discover Perfect Gifts</string>
+    <string name="featured_gift_title">Special Gift Box</string>
+    <string name="featured_gift_description">A curated selection of surprises for your loved ones.</string>
+    <string name="explore_button">Explore Now</string>
+    <string name="explore_button_description">Explore the featured gift</string>
+    <string name="categories_title">Explore Categories</string>
+    <string name="popular_gifts_title">Popular Gifts</string>
+    <string name="home_scroll_description">Home screen content</string>
+    <string name="categories_recycler_description">Gift Categories</string>
+    <string name="popular_gifts_recycler_description">Popular Gifts</string>
+    <string name="app_logo_description">Search Gifts\n</string>
+    <string name="login_icon_description">Login or profile, navigate to profile</string>
 
+    <string name="category_item_description">Category item</string>
 </resources>

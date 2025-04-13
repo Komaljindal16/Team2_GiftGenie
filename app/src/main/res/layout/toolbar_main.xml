@@ -5,45 +5,67 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@android:color/white"
-    android:elevation="4dp">
+    android:background="@null">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
+        android:layout_height="match_parent">
 
         <!-- App Logo -->
         <ImageView
             android:id="@+id/app_logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@drawable/ic_gift_flaticon"
-            android:contentDescription="App Logo" />
+            android:contentDescription="@string/app_logo_description"
+            android:animation="@anim/fade_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp" />
 
         <!-- Search Bar -->
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/search_bar"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/crimson_glow"
+            app:hintTextColor="@color/rose_quartz"
+            app:endIconMode="clear_text"
+            app:endIconDrawable="@drawable/ic_clear"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/app_logo"
+            app:layout_constraintEnd_toStartOf="@id/login_icon"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:hint="Search products..."
-            android:background="@android:drawable/edit_text"
-            android:padding="8dp"
-            android:singleLine="true"
-            android:imeOptions="actionSearch" />
+            android:layout_marginEnd="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_hint"
+                android:textColor="@color/accessible_gray"
+                android:textColorHint="@color/rose_quartz"
+                android:background="@null"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:padding="15dp"
+                android:animation="@anim/fade_in" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Login Icon -->
         <ImageView
             android:id="@+id/login_icon"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_manage"
-            android:contentDescription="Login" />
-    </LinearLayout>
+            android:src="@drawable/ic_profile_flaticon"
+            android:contentDescription="@string/login_icon_description"
+            android:animation="@anim/fade_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>

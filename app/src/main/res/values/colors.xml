@@ -10,9 +10,18 @@
     <color name="secondary_red">#FF8A80</color>  <!-- Subtle highlights -->
     <color name="dark_gray">#212121</color>      <!-- Text -->
     <color name="grey">#757575</color>           <!-- Hint text -->
-        <color name="white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="wine_red">#722F37</color>
     <color name="rose_quartz">#F08080</color>
+    <color name="crimson_glow">#DC143C</color>
+    <color name="burnt_sienna">#E97451</color>
+    <color name="soft_cherry">#C71585</color>
+    <color name="warm_purple">#7B68EE</color>
+    <color name="deep_blue">#4169E1</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="accessible_gray">#2A2A2A</color>
+    <color name="dark_burnt_sienna">#BF5730</color>
+    <color name="dark_wine_red">#5A2328</color>
 
 
 </resources>

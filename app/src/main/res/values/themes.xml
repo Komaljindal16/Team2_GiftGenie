@@ -8,6 +8,7 @@
         <item name="android:textColor">@color/dark_gray</item>
         <item name="android:textColorHint">@color/grey</item>
         <item name="buttonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowBackground">@null</item>
     </style>
 
     <style name="AppButtonStyle" parent="Widget.AppCompat.Button">
@@ -17,4 +18,5 @@
         <item name="elevation">6dp</item>    <!-- Slightly higher for pop -->
         <item name="rippleColor">@color/secondary_red</item> <!-- Subtle red ripple -->
     </style>
+
 </resources>
