@@ -2,8 +2,8 @@
     <string name="GiftGenie">Gift Genie</string>
     <string name="default_web_client_id">116030471542-u5rt4qbecmiia6294bvt0c3hadsne3ol.apps.googleusercontent.com</string>
 
-        <string name="app_name">GenieGift</string>
-        <string name="welcome_text">GenieGift</string>
+        <string name="app_name">Gift Genie</string>
+        <string name="welcome_text">Gift Genie</string>
         <string name="tagline_text">Craft Moments That Matter</string>
         <string name="continue_button">Start Shopping</string>
 
