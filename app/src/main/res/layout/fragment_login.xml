@@ -64,8 +64,8 @@
                 android:id="@+id/username_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:textColor="@color/accessible_gray"
+                android:inputType="text"
                 android:textColorHint="@color/rose_quartz"
                 android:background="@null" />
         </com.google.android.material.textfield.TextInputLayout>
