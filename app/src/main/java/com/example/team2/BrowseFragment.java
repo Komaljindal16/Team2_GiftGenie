@@ -25,7 +25,7 @@ public class BrowseFragment extends Fragment implements GiftData.OnGiftsLoadedLi
         noResultsText = view.findViewById(R.id.no_results_text);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new GiftAdapter(allGifts, false, false);  // isCartMode=false, isHomeMode=false
+        adapter = new GiftAdapter(allGifts, false, false);  
         recyclerView.setAdapter(adapter);
 
         GiftData.getInstance().setOnGiftsLoadedListener(this);
