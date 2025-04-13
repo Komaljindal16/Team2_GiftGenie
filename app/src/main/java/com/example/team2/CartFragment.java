@@ -28,7 +28,7 @@ public class CartFragment extends Fragment {
         checkoutButton = view.findViewById(R.id.checkout_button);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new GiftAdapter(GiftData.getInstance().getCart(), true, false); // isCartMode=true, isHomeMode=false
+        adapter = new GiftAdapter(GiftData.getInstance().getCart(), true, false); 
         recyclerView.setAdapter(adapter);
 
         checkoutButton.setOnClickListener(v -> {
